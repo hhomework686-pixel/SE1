@@ -1,3 +1,4 @@
+// This program is a training example for the Git lab.
 #include <iostream>
 using namespace std;
 
