@@ -1,4 +1,8 @@
-// This program is a training example for the Git lab.
+//
+// This program is just an example one under VCS.
+// Author: §¹§Ø§Ñ§ß §Á§ß, KE-333
+// Year: 2026
+//
 #include <iostream>
 using namespace std;
 
