@@ -1,6 +1,6 @@
 //
 // This program is just an example one under VCS.
-// Author: §¹§Ø§Ñ§ß §Á§ß, KE-333
+// Author: ZhangYang, N-161
 // Year: 2026
 //
 #include <iostream>
@@ -14,5 +14,6 @@ int main()
     cout << "A + B = " << a + b << '\n';
     cout << "A - B = " << a - b << '\n';
     cout << "A * B = " << a * b << '\n';
+    cout << "A / B = " << a / b << '\n';
     return 0;
 }
