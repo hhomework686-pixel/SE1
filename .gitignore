@@ -1,0 +1,14 @@
+# Object files
+*.obj
+*.o
+
+# Executables
+*.exe
+
+# Code::Blocks generated files
+*.layout
+*.depend
+
+# Build output directories
+/bin/
+/obj/
