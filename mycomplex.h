@@ -4,15 +4,15 @@
 using namespace std;
 class Complex
 {double Re;
-	double Im; 
-	public:
+    double Im;
+    public:
 Complex(double aRe=0, double aIm=0);
 Complex(const Complex&);
 ~Complex(    );
 void Set(double aRe, double aIm=0);
 operator double();
  double abs();
- friend istream& operator>>(   istream&,Complex&) ; 
+ friend istream& operator>>(   istream&,Complex&) ;
 
 
 
@@ -21,9 +21,9 @@ friend ostream& operator<< (ostream&, Complex & );
 Complex operator+ (const Complex&);
 Complex operator- (const Complex&);
 Complex operator+ (const double&);
-friend 		Complex operator+ (const double&, const Complex&);
+friend      Complex operator+ (const double&, const Complex&);
 Complex operator- (const double&);
-friend Complex operator- (const 	double&, const Complex&);
+friend Complex operator- (const     double&, const Complex&);
 Complex operator* (const Complex&);
 Complex operator* (const double&);
 friend Complex operator* (const double&, const Complex&)    ;Complex operator/ (const double&);
