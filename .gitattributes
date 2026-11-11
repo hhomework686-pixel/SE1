@@ -1,0 +1,2 @@
+*.cpp whitespace=tab-in-indent,trailing-space,cr-at-eol
+*.h   whitespace=tab-in-indent,trailing-space,cr-at-eol
