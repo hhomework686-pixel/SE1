@@ -3,14 +3,10 @@
 #include "mycomplex.h"
 using namespace std;
 
-Complex::Complex(double re, double im) {
-    re_ = re;
-    im_ = im;
+Complex::Complex(double re, double im) : re_(re), im_(im) {
 }
 
-Complex::Complex(const Complex& rhs) {
-    re_ = rhs.re_;
-    im_ = rhs.im_;
+Complex::Complex(const Complex& rhs) : re_(rhs.re_), im_(rhs.im_) {
 }
 
 Complex::~Complex() {
@@ -23,56 +19,56 @@ void Complex::set(double re, double im) {
     im_ = im;
 }
 
-Complex::operator double() {
+Complex::operator double() const {
     return abs();
 }
 
-double Complex::abs() {
+double Complex::abs() const {
     return sqrt(re_ * re_ + im_ * im_);
 }
 
-Complex Complex::operator+(const Complex& rhs) {
+Complex Complex::operator+(const Complex& rhs) const {
     Complex result;
     result.re_ = re_ + rhs.re_;
     result.im_ = im_ + rhs.im_;
     return result;
 }
 
-Complex Complex::operator-(const Complex& rhs) {
+Complex Complex::operator-(const Complex& rhs) const {
     Complex result;
     result.re_ = re_ - rhs.re_;
     result.im_ = im_ - rhs.im_;
     return result;
 }
 
-Complex Complex::operator+(const double& value) {
+Complex Complex::operator+(const double& value) const {
     Complex result;
     result.re_ = re_ + value;
     result.im_ = im_;
     return result;
 }
 
-Complex Complex::operator-(const double& value) {
+Complex Complex::operator-(const double& value) const {
     Complex result(*this);
     result.re_ = re_ - value;
     return result;
 }
 
-Complex Complex::operator*(const Complex& rhs) {
+Complex Complex::operator*(const Complex& rhs) const {
     Complex result;
     result.re_ = re_ * rhs.re_ - im_ * rhs.im_;
     result.im_ = re_ * rhs.im_ + im_ * rhs.re_;
     return result;
 }
 
-Complex Complex::operator*(const double& value) {
+Complex Complex::operator*(const double& value) const {
     Complex result;
     result.re_ = re_ * value;
     result.im_ = im_ * value;
     return result;
 }
 
-Complex Complex::operator/(const double& value) {
+Complex Complex::operator/(const double& value) const {
     Complex result;
     result.re_ = re_ / value;
     result.im_ = im_ / value;
@@ -138,7 +134,7 @@ istream& operator>>(istream& stream, Complex& value) {
     return stream;
 }
 
-ostream& operator<<(ostream& stream, Complex& value) {
+ostream& operator<<(ostream& stream, const Complex& value) {
     stream << value.re_;
     if (!(value.im_ < 0)) {
         stream << '+';

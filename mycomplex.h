@@ -7,25 +7,25 @@ class Complex {
     double im_;
 
 public:
-    Complex(double re = 0, double im = 0);
+    explicit Complex(double re = 0, double im = 0);
     Complex(const Complex& rhs);
     ~Complex();
     void set(double re, double im = 0);
-    operator double();
-    double abs();
+    explicit operator double() const;
+    double abs() const;
     friend std::istream& operator>>(std::istream& stream, Complex& value);
-    friend std::ostream& operator<<(std::ostream& stream, Complex& value);
+    friend std::ostream& operator<<(std::ostream& stream, const Complex& value);
 
-    Complex operator+(const Complex& rhs);
-    Complex operator-(const Complex& rhs);
-    Complex operator+(const double& value);
+    Complex operator+(const Complex& rhs) const;
+    Complex operator-(const Complex& rhs) const;
+    Complex operator+(const double& value) const;
     friend Complex operator+(const double& lhs, const Complex& rhs);
-    Complex operator-(const double& value);
+    Complex operator-(const double& value) const;
     friend Complex operator-(const double& lhs, const Complex& rhs);
-    Complex operator*(const Complex& rhs);
-    Complex operator*(const double& value);
+    Complex operator*(const Complex& rhs) const;
+    Complex operator*(const double& value) const;
     friend Complex operator*(const double& lhs, const Complex& rhs);
-    Complex operator/(const double& value);
+    Complex operator/(const double& value) const;
 
     Complex& operator+=(const Complex& rhs);
     Complex& operator-=(const Complex& rhs);
